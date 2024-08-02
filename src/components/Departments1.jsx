@@ -4,8 +4,8 @@ import 'react-multi-carousel/lib/styles.css';
 
 
 
-  const Departments = () => {
-    const departmentsArray = [
+  const Departments1 = () => {
+    const departmentsArray1 = [
       {
         name: "general",
         imageUrl: "/departments/pedia.jpg",
@@ -76,7 +76,7 @@ import 'react-multi-carousel/lib/styles.css';
       <h2>Departments</h2>
       <Carousel responsive={responsive} removeArrowOnDeviceType={["medium","small"]}>
         {
- departmentsArray.map((depart, index)=>{
+ departmentsArray1.map((depart, index)=>{
   return (
     <div className="card" key={index}>
       <div className="depart-name">{depart.name}</div>
@@ -91,4 +91,4 @@ import 'react-multi-carousel/lib/styles.css';
   );
 };
   
-export default Departments
+export default Departments1

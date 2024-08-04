@@ -8,40 +8,21 @@ import 'react-multi-carousel/lib/styles.css';
     const departmentsArray = [
       {
         
-        imageUrl: "/DOGS/adopt.jpg",
+        imageUrl: "/service/01.png",
       },
       {
        
-        imageUrl: "/DOGS/jerman.jpg",
+        imageUrl: "/service/02.png",
       },
       {
        
-        imageUrl: "/DOGS/shihtzu.jpg",
+        imageUrl: "/service/03.png",
       },
       {
        
-        imageUrl: "/DOGS/lebra2.jpg",
+        imageUrl: "/service/04.png",
       },
-      {
       
-        imageUrl: "/DOGS/pitbull.jpg",
-      },
-      {
-        
-        imageUrl: "/DOGS/golden.jpg",
-      },
-      {
-       
-        imageUrl: "/DOGS/beagle.jpeg",
-      },
-      {
-        
-        imageUrl: "/DOGS/chow-chow.jpg",
-      },
-      {
-       
-        imageUrl: "/DOGS/doberman.jpg",
-      },
     ];
     
 
@@ -73,8 +54,8 @@ import 'react-multi-carousel/lib/styles.css';
   return (
     <>
     <div className='container departments'>
-      <h2 className='hello'>ADOPTION :</h2>
-      <p className='hello2'> " Find your new best friend—explore our lovable pets waiting for a forever home "</p>
+      <h2 className='hello'>SPECIAL OFFERS :</h2>
+      <p className='hello2'>"Schedule your appointment today to unlock our exclusive offers and unbeatable deals!" </p>
 
       <Carousel responsive={responsive} removeArrowOnDeviceType={["medium","small"]}>
         {

@@ -44,49 +44,48 @@ const Login = () => {
 
   return (
     <>
-      <div className="container form-component login-form">
+      <div className="message2-box2">
         <h2>Sign In</h2>
-        <p>Please Login To Continue</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
-        </p>
-        <form onSubmit={handleLogin}>
+        <h6 className="hello5">Please Login To Continue</h6>
+        
+
+        <form onSubmit={handleLogin} className="form-group">
           <input
             type="text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
+           className="input2" />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+           className="input2"  />
           <input
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <div
+           className="input2" />
+
+          <div className="register1"
             style={{
               gap: "10px",
               justifyContent: "flex-end",
               flexDirection: "row",
             }}
           >
-            <p style={{ marginBottom: 0 }}>Not Registered?</p>
+            <p style={{ marginBottom: 0 ,fontSize: 15,fontWeight: "light"}}>Not Registered?</p>
             <Link
               to={"/register"}
-              style={{ textDecoration: "none", color: "#271776ca" }}
+              style={{ textDecoration: "none", color: "#271776ca" ,fontSize: 15,fontWeight: "light"}}
             >
               Register Now
             </Link>
           </div>
-          <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Login</button>
+          <div className="button-div" >
+            <button type="submit" className="button4">Login</button>
           </div>
         </form>
       </div>

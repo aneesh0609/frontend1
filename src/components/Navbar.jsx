@@ -33,20 +33,41 @@ const Navbar = () => {
     <>
       <nav className={"container"}>
         <div className="logo">
-          <img src="/logo.png" alt="logo" className="logo-img" />
+          <img src="/pawslogo.png" alt="logo" className="logo-img" />
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
+
+         <div className="icons-div">
+          <img src="/home.png" className="icons " />
+         </div>
           <div className="links">
             <Link to={"/"} onClick={() => setShow(!show)}>
               Home
             </Link>
+            </div>
+
+            <div className="icons-div">
+          <img src="/appointment.png" className="icons " />
+           </div>
+             
+            <div className="links">
             <Link to={"/appointment"} onClick={() => setShow(!show)}>
               Appointment
             </Link>
-            <Link to={"/about"} onClick={() => setShow(!show)}>
+            </div>
+
+            <div className="icons-div">
+            <img src="/contact1.png" className="icons " />
+            </div>
+             
+            <div className="links">
+            <Link to={"/about"} onClick={() => setShow(!show)} >
               About Us
             </Link>
-          </div>
+            </div>
+
+         
+
           {isAuthenticated ? (
             <button className="logoutBtn btn" onClick={handleLogout}>
               LOGOUT

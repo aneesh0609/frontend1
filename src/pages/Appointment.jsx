@@ -1,14 +1,16 @@
 import React from "react";
 import Hero from "../components/Hero";
 import AppointmentForm from "../components/AppointmentForm";
+import  Departments   from "../components/Department3"
 
 const Appointment = () => {
   return (
     <>
       <Hero
-        title={"Schedule Your Appointment | ZeeCare Medical Institute"}
-        imageUrl={"/signin.png"}
+        title={"Appointment"}
+        imageUrl={"/app.png"}
       />
+       <Departments />
       <AppointmentForm/>
     </>
   );

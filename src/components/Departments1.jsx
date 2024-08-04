@@ -7,41 +7,18 @@ import 'react-multi-carousel/lib/styles.css';
   const Departments1 = () => {
     const departmentsArray1 = [
       {
-        name: "general",
-        imageUrl: "/departments/pedia.jpg",
+       
+        imageUrl: "/DOGS/20.jpg",
       },
       {
-        name: "Orthopedics",
-        imageUrl: "/departments/ortho.jpg",
+      
+        imageUrl: "/DOGS/30.jpg",
       },
       {
-        name: "Cardiology",
-        imageUrl: "/departments/cardio.jpg",
+        
+        imageUrl: "/DOGS/CAT30.jpg",
       },
-      {
-        name: "Neurology",
-        imageUrl: "/departments/neuro.jpg",
-      },
-      {
-        name: "Oncology",
-        imageUrl: "/departments/onco.jpg",
-      },
-      {
-        name: "Radiology",
-        imageUrl: "/departments/radio.jpg",
-      },
-      {
-        name: "Physical Therapy",
-        imageUrl: "/departments/therapy.jpg",
-      },
-      {
-        name: "Dermatology",
-        imageUrl: "/departments/derma.jpg",
-      },
-      {
-        name: "ENT",
-        imageUrl: "/departments/ent.jpg",
-      },
+      
     ];
     
 
@@ -73,14 +50,14 @@ import 'react-multi-carousel/lib/styles.css';
   return (
     <>
     <div className='container departments'>
-      <h2>Departments</h2>
+      <h2>DEALS AND DISCOUNTS</h2>
+      <p className='hello2'>" Save 15% on all vet services this month—because your pet deserves the best care! "</p>
       <Carousel responsive={responsive} removeArrowOnDeviceType={["medium","small"]}>
         {
  departmentsArray1.map((depart, index)=>{
   return (
     <div className="card" key={index}>
-      <div className="depart-name">{depart.name}</div>
-      <img src={depart.imageUrl} alt={depart.name} />
+      <img src={depart.imageUrl} />
     </div>
   );
  })}

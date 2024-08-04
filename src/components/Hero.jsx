@@ -4,14 +4,15 @@ const Hero = ({title, imageUrl}) => {
   return (
     <div className='hero container'>
       <div className="banner">
-        <h1>{title}</h1>
-        <p>Welcome to Paws-World, where every pet is treated like family. Our dedicated team of veterinarians and staff provide compassionate, top-quality care to keep your furry friends happy and healthy. From routine check-ups to advanced treatments, we`re here to support your pet's well-being every step of the way</p>
+        <p className='fonts3'>{title}</p>
+        <h3 className="fonts1">Welcome To Paws & Claws Animal Santuary</h3>
+        <p className="fonts2">"Discover a world where every tail wags with joy and every purr brings comfort. At paws & Claws"</p>
       </div>
       <div className="banner">
 
         <img src={imageUrl} alt="hero" className="animated-image" />
         <span>
-          <img src="/Vector.png" alt="vector "/>
+          <img src="/vector2.png" alt="vector"/>
         </span>
       </div>
     </div>

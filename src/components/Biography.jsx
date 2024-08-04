@@ -1,22 +1,92 @@
 import React from 'react'
 
-const Biography = ({imageUrl}) => {
+const Biography =  () =>  {
   return (
-    <div className='container biography'>
-      <div className="banner">
-        <img src={imageUrl} alt="aboutImg" />
-      </div>
-      <div className="banner">
-        <p>Biography</p>
-        <h3>Who We Are</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel repellendus aperiam obcaecati blanditiis incidunt et hic, reiciendis repellat, unde quo pariatur architecto iusto delectus repudiandae temporibus omnis aspernatur animi, eum excepturi? Laudantium, facere iste neque eius animi voluptatibus fugit assumenda ullam, voluptatum asperiores, modi ipsa hic amet labore eveniet!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga explicabo temporibus quasi asperiores quaerat molestias amet, dolore voluptatum quibusdam! Voluptatibus, quis nemo maxime eos obcaecati id, quia similique ab nihil, tempore cupiditate optio suscipit eaque!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, sed.</p>
-       <p>Lorem, ipsum dolor.</p>
+
+    
+    
+
+    <div className="container3 "  >
+    
+    <div className="parent">
+      <div className="cards">
+        <div className="content-box">
+          <h1 className="cards-title">Puppy Care</h1>
+          <p className="cards-content">
+            - vaccination shot<br/>
+            - Deworming <br />
+            - cleaning
+          </p>
+          <span className="see-more"> ₹  12000</span>
+        </div>
+        <div className="date-box">
+          <span className="month">PAWS</span>
+          <span className='month'>World</span>
+          </div>
       </div>
     </div>
+
+    <div className="parent cards2">
+      <div className="cards">
+        <div className="content-box">
+          <h1 className="cards-title">Kitten Care</h1>
+          <p className="cards-content">
+          - vaccination shot<br/>
+            - Deworming <br />
+            - Unlimited nail trims
+          </p>
+          <span className="see-more">  ₹  10000</span>
+        </div>
+        <div className="date-box">
+          <span className="month">PAWS</span>
+          <span className='month'>World</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="parent cards3">
+      <div className="cards">
+        <div className="content-box">
+          <h1 className="cards-title">Pet Care</h1>
+          <p className="cards-content">
+          - Grooming sessions<br/>
+            - Body clippings <br />
+            - Hydrotherapy sessions
+          </p>
+          <span className="see-more">₹  13000</span>
+        </div>
+        <div className="date-box">
+          <span className="month">PAWS</span>
+          <span className='month'>World</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div className="parent cards4">
+      <div className="cards">
+        <div className="content-box">
+          <h1 className="cards-title">Pet Care</h1>
+          <p className="cards-content">
+          - Grooming sessions<br/>
+            - Body clippings <br />
+            - Hydrotherapy sessions
+          </p>
+          <span className="see-more">₹ 15000</span>
+        </div>
+        <div className="date-box">
+          <span className="month">PAWS</span>
+          <span className='month'>World</span>
+        </div>
+      </div>
+    </div>
+
+   
+
+  </div>
+  
+
   )
 }
 

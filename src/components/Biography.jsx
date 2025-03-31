@@ -67,10 +67,10 @@ const Biography =  () =>  {
     <div className="parent cards4">
       <div className="cards">
         <div className="content-box">
-          <h1 className="cards-title">Pet Care</h1>
+          <h1 className="cards-title">Special Set</h1>
           <p className="cards-content">
           - Grooming sessions<br/>
-            - Body clippings <br />
+            - Body massage <br />
             - Hydrotherapy sessions
           </p>
           <span className="see-more">₹ 15000</span>

@@ -14,7 +14,7 @@ const [message, setMessage] = useState("")
   const handleMessage = async (e) =>{
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/api/v1/message/send",{firstName,lastName,phone,email,message},{withCredentials: true,
+      await axios.post("https://new-back-m98d.onrender.com/api/v1/message/send",{firstName,lastName,phone,email,message},{withCredentials: true,
       headers:{
         "Content-Type": "application/json",
         },

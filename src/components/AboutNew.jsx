@@ -49,16 +49,7 @@ const AboutNew = () => {
         </label>
 
 
-        <input type="radio" name="slide" id="c5" className='input1'/>
-        <label for="c5" className="cardd">
-            <div className="row">
-                <div className="iconn">5</div>
-                <div className="descriptions">
-                    <h4>RABIES</h4>
-                    <p>Rabies in dogs is a deadly viral infection that affects the nervous system and is transmitted through bites from infected animals</p>
-                </div>
-            </div>
-        </label>
+       
     </div>
 </div>
 

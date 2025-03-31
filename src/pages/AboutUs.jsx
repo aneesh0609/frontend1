@@ -1,16 +1,14 @@
 import React from "react";
 import Hero from "../components/Hero";
 import AboutNew from "../components/AboutNew";
-
+import Card from "../components/Card";
+import Words from "../components/Words";
 
 const AboutUs = () => {
   return (
     <>
-      <Hero
-        title={"Learn More About Us "}
-        imageUrl={"/anish.jpg"}
-      />
-       <AboutNew />
+      
+       <Words />
       
     </>
   );

@@ -7,9 +7,8 @@ import Words from "../components/Words";
 const AboutUs = () => {
   return (
     <>
-      
-       <Words />
-      
+
+       <Card />
     </>
   );
 };

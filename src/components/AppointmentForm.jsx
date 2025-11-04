@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { Calendar, Phone, User, MapPin, HeartHandshake, Stethoscope } from "lucide-react";
 
-const AppointmentForm = () => {
+export default function AppointmentForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +30,7 @@ const AppointmentForm = () => {
   ];
 
   const [doctors, setDoctors] = useState([]);
+
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
@@ -37,14 +38,13 @@ const AppointmentForm = () => {
         { withCredentials: true }
       );
       setDoctors(data.doctors);
-      console.log(data.doctors);
     };
     fetchDoctors();
   }, []);
+
   const handleAppointment = async (e) => {
     e.preventDefault();
     try {
-      const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
         "https://new-back-m98d.onrender.com/api/v1/appointment/post",
         {
@@ -58,153 +58,111 @@ const AppointmentForm = () => {
           department,
           doctor_firstName: doctorFirstName,
           doctor_lastName: doctorLastName,
-          hasVisited: hasVisitedBool,
+          hasVisited: Boolean(hasVisited),
           address,
         },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
+        { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
+
       toast.success(data.message);
-      setFirstName(""),
-        setLastName(""),
-        setEmail(""),
-        setPhone(""),
-        setDob(""),
-        setGender(""),
-        setAppointmentDate(""),
-        setDepartment(""),
-        setDoctorFirstName(""),
-        setDoctorLastName(""),
-        setHasVisited(""),
-        setAddress("");
+      setFirstName(""); setLastName(""); setEmail(""); setPhone("");
+      setDob(""); setGender(""); setAppointmentDate(""); setDepartment("");
+      setDoctorFirstName(""); setDoctorLastName(""); setHasVisited(false);
+      setAddress("");
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
 
   return (
-    <>
-      <div className="message4-box4">
-        <h2>Appointment</h2>
-        <form onSubmit={handleAppointment}>
-          <div className="input4">
-            <input className="input4"
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input className="input4"
-              type="text"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
-          <div className="input4">
-            <input className="input4"
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input className="input4"
-              type="number"
-              placeholder="Mobile Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div className="input4">
-           
-            <input className="input4"
-              type="date"
-              placeholder="Date of Birth"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-            />
-          </div>
-          <div className="input4">
-            <select  className="input4"  value={gender} onChange={(e) => setGender(e.target.value)}>
-              <option value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-            <input className="input4"
-              type="date"
-              placeholder="Appointment Date"
-              value={appointmentDate}
-              onChange={(e) => setAppointmentDate(e.target.value)}
-            />
-          </div>
-          <div className="input4">
-            <select className="input4"
-              value={department}
-              onChange={(e) => {
-                setDepartment(e.target.value);
-                setDoctorFirstName("");
-                setDoctorLastName("");
-              }}
-            >
-              {departmentsArray.map((depart, index) => {
-                return (
-                  <option value={depart} key={index}>
-                    {depart}
-                  </option>
-                );
-              })}
-            </select>
-            <select className="input4"
-              value={`${doctorFirstName} ${doctorLastName}`}
-              onChange={(e) => {
-                const [firstName, lastName] = e.target.value.split(" ");
-                setDoctorFirstName(firstName);
-                setDoctorLastName(lastName);
-              }}
-              disabled={!department}
-            >
-              <option value="">Select Doctor</option>
-              {doctors
-                .filter((doctor) => doctor.doctorDepartment === department)
-                .map((doctor, index) => (
-                  <option
-                    value={`${doctor.firstName} ${doctor.lastName}`}
-                    key={index}
-                  >
-                    {doctor.firstName} {doctor.lastName}
-                  </option>
-                ))}
-            </select>
-          </div>
-          <textarea className="input4"
-            rows="10"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            placeholder="Address"
-          />
-          <div
-            style={{
-              gap: "10px",
-              justifyContent: "flex-end",
-              flexDirection: "row",
-            }}
-          >
-            <p className="register1" style={{ marginBottom: 0 }}>Have you visited before?</p>
-            <input className="register"
-              type="checkbox"
-              checked={hasVisited}
-              onChange={(e) => setHasVisited(e.target.checked)}
-              style={{ flex: "none", width: "25px" }}
-            />
-          </div>
-          <button className="button4" style={{ margin: "0 auto" }}>GET APPOINTMENT</button>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 py-12 px-4">
+      <div className="bg-white max-w-2xl w-full rounded-3xl shadow-xl border border-amber-100 p-8 sm:p-10 relative">
+
+        {/* Heading Badge */}
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-rose-500 text-white px-6 py-2 rounded-full shadow-lg text-sm font-medium flex items-center gap-2">
+          <HeartHandshake className="w-4 h-4" /> Book an Appointment
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 bg-clip-text text-transparent">
+          Your Pet's Health Matters 🐾
+        </h2>
+
+        <form onSubmit={handleAppointment} className="space-y-5">
           
+          {/* Name Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="First Name"
+              value={firstName} onChange={e=>setFirstName(e.target.value)}
+              className="inputTailwind" />
+            <input type="text" placeholder="Last Name"
+              value={lastName} onChange={e=>setLastName(e.target.value)}
+              className="inputTailwind" />
+          </div>
+
+          {/* Email / Phone */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="email" placeholder="Email"
+              value={email} onChange={e=>setEmail(e.target.value)}
+              className="inputTailwind" />
+            <input type="number" placeholder="Phone Number"
+              value={phone} onChange={e=>setPhone(e.target.value)}
+              className="inputTailwind" />
+          </div>
+
+          {/* DOB / Appointment Date */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="date"
+              value={dob} onChange={e=>setDob(e.target.value)}
+              className="inputTailwind" />
+            <input type="date"
+              value={appointmentDate} onChange={e=>setAppointmentDate(e.target.value)}
+              className="inputTailwind" />
+          </div>
+
+          {/* Gender & Department */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <select className="inputTailwind"
+              value={gender} onChange={e=>setGender(e.target.value)}>
+              <option value="">Select Gender</option>
+              <option>Male</option><option>Female</option>
+            </select>
+            
+            <select className="inputTailwind"
+              value={department}
+              onChange={(e)=>{ setDepartment(e.target.value); setDoctorFirstName(""); setDoctorLastName(""); }}>
+              {departmentsArray.map((d,i)=><option key={i}>{d}</option>)}
+            </select>
+          </div>
+
+          {/* Doctor */}
+          <select className="inputTailwind"
+            value={`${doctorFirstName} ${doctorLastName}`}
+            onChange={e=>{ const [f,l]=e.target.value.split(" "); setDoctorFirstName(f); setDoctorLastName(l); }}
+            disabled={!department}>
+            <option value="">Select Doctor</option>
+            {doctors.filter(d=>d.doctorDepartment===department).map((doc,i)=>(
+              <option key={i}>{doc.firstName} {doc.lastName}</option>
+            ))}
+          </select>
+
+          {/* Address */}
+          <textarea rows="4" placeholder="Address"
+            className="inputTailwind resize-none"
+            value={address} onChange={e=>setAddress(e.target.value)} />
+
+          {/* Checkbox */}
+          <label className="flex items-center gap-3 text-sm font-medium text-gray-700">
+            <input type="checkbox" checked={hasVisited}
+              onChange={e=>setHasVisited(e.target.checked)}
+              className="w-5 h-5 rounded border-gray-300" /> visited before?
+          </label>
+
+          {/* Submit */}
+          <button className="w-full py-3 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white font-bold text-lg hover:shadow-xl transform hover:scale-105 transition">
+            Book Appointment
+          </button>
         </form>
       </div>
-    </>
+    </div>
   );
-};
-
-export default AppointmentForm;
+}

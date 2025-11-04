@@ -30,8 +30,10 @@ const App = () => {
     fetchUser();
   },[isAuthenticated]);
   return (
-    <>
-    <Router>
+    <> 
+    <div className="pt-16 "> 
+    
+       <Router>
       <Navbar />
       <Routes>
       <Route path='/' element={<Home/>}/>
@@ -44,6 +46,9 @@ const App = () => {
       <Footer/>
       <ToastContainer position='top-center'   />
     </Router>
+    
+
+    </div>
     
     
     

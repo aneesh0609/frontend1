@@ -6,11 +6,6 @@ import  Departments   from "../components/Department3"
 const Appointment = () => {
   return (
     <>
-      <Hero
-        title={"Appointment"}
-        imageUrl={"/app.png"}
-      />
-       <Departments />
       <AppointmentForm/>
     </>
   );
